@@ -1,0 +1,82 @@
+<html >
+  <head>
+  <meta charset="utf-8">
+  <title>多特瑞2017年巴厘岛研讨会回馈问卷</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" /> 
+  <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <style type="text/css">
+
+  </style>
+ </head>
+ <body>
+  <span class="ks-simplestar">
+
+    <img src="icon.png">
+    <img src="icon.png">
+    <img src="icon.png">
+    <img src="icon.png">
+    <img src="icon.png">    
+
+  </span>
+  <br/>
+    <span class="ks-simplestar1">
+
+    <img src="icon.png">
+    <img src="icon.png">
+    <img src="icon.png">
+    <img src="icon.png">
+    <img src="icon.png">    
+
+  </span>
+    <br/>
+    <span class="ks-simplestar2">
+
+    <img src="icon.png">
+    <img src="icon.png">
+    <img src="icon.png">
+    <img src="icon.png">
+    <img src="icon.png">    
+
+  </span>
+    <br/>
+    <span class="ks-simplestar3">
+
+    <img src="icon.png">
+    <img src="icon.png">
+    <img src="icon.png">
+    <img src="icon.png">
+    <img src="icon.png">    
+
+  </span>
+    <br/>
+    <span class="ks-simplestar4">
+
+    <img src="icon.png">
+    <img src="icon.png">
+    <img src="icon.png">
+    <img src="icon.png">
+    <img src="icon.png">    
+
+  </span>
+
+
+  <script type="text/javascript">
+    $(document).ready(function($) {
+      function king(name){
+        $(name).click(function(){
+          var index = $(this).index()+1;
+             $( name + ":lt("+index+")").attr("src","icon-active.png");
+          index = index -1;
+             $( name + ":gt("+index+")").attr("src","icon.png");
+      });
+      }
+      king(".ks-simplestar img");
+      king(".ks-simplestar1 img");
+      king(".ks-simplestar2 img");
+      king(".ks-simplestar3 img");
+      king(".ks-simplestar4 img");
+    });
+  </script>
+ </body>
+</html>
