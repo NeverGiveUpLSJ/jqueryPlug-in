@@ -1,1 +1,43 @@
-* {margin: 0;padding: 0;}
+*,*:before,*:after {-webkit-box-sizing:border-box;box-sizing:border-box;}
+*{margin:0;padding:0;font-weight:normal;}
+* html,* html body{background-image:url(about:blank);background-attachment:fixed;}
+html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;-webkit-tap-highlight-color:rgba(255,255,255,0);}
+body,input,textarea,select{font-size:12px;font-family: Microsoft Yahei, "Helvetica Neue", Helvetica, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;color:#414141;line-height:1.42857143;-webkit-font-smoothing:antialiased;}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;table-layout:fixed;}
+caption{text-align:left;font-weight:normal;}
+html,body,fieldset,img,iframe,abbr,button,input{border:0;}
+i,cite,em,var,address,dfn{font-style:normal;}
+[hidefocus],summary{outline:0;}
+ul,ol,li{list-style:none;}
+sup,sub{font-size:83%;}
+pre,code,kbd,samp{font-family:inherit;}
+blockquote:before,blockquote:after,q:before,q:after{content:none;content:"";}
+blockquote,q{quotes:"" "";}
+textarea{overflow:auto;resize:none;}
+label,summary{cursor:default;}
+a,button{cursor:pointer;}
+a,input,img{vertical-align:middle;border:0;outline:none;}
+h1,h2,h3,h4,h5,h6,em,strong,b,th{font-weight:bold;}
+del,ins,u,s,a,a:hover,a:active{text-decoration:none;}
+body,textarea,input,button,select,keygen,legend{outline:0;}
+a{color:#033d8e;color:rgba(3,61,142,1);transition:color .2s ease;}
+a{blr:expression(this.onFocus=this.blur());}
+input,button,select,textarea,input:focus,button:focus,select:focus,textarea:focus{outline:none;}
+input,button,select,textarea{outline:none;border-radius:0;}
+input[type="search"]{-webkit-appearance:none;}
+input[type="button"]{cursor:pointer;}
+input::-webkit-search-decoration,input::-webkit-search-cancel-button{display:none;}
+hr{margin:0;padding:0;border:0;color:#000;background-color:#000;height:1px}
+[data-money-format] small{font-size:80%;}
+::-moz-selection{background:#11a9f7;color:#fff;}
+::selection {background:#11a9f7;color:#fff;}
+/*IE10取消input框默认的叉叉和密码输入框的眼睛*/
+::-ms-clear{display:none;}
+::-ms-reveal{display:none;}
+/*-- fixclear --*/
+.fix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.fix{display:inline-block;}
+* html .fix{height:1%;}
+.fix{display:block;}
