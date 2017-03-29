@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板Form版</title>
+    <style>
+        * {
+            margin: 0;
+            border: 0;
+            padding: 0;
+        }
+
+        input {
+            display: block;
+            margin: 20px;
+            border: 1px solid gray;
+            width: 300px;
+            height: 24px;
+            line-height: 24px;
+        }
+    </style>
+</head>
+<body>
+<form action="http://localhost:3000/" method="post">
+    <input type="text" placeholder="姓名" name="name" id="name"/>
+    <input type="text" placeholder="内容" name="content" id="content"/>
+    <input type="submit" value="提交"/>
+</form>
+</body>
+</html>

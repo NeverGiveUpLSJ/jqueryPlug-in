@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>留言板大屏幕</title>
+</head>
+<body>
+<p></p>
+<script>
+    var currentID = 1;
+    var oP = document.getElementsByTagName('p')[0];
+    var append = function (name, content) {
+        oP.innerHTML += name + ': ' + content + '<br/>';
+    }
+
+    setInterval(function () {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://localhost:3000/?fromID=' + currentID);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                var comments = JSON.parse(xhr.responseText);
+                for (var i = 0; i < comments.length; i++) {
+                    var comment = comments[i];
+                    append(comment.name, comment.content);
+                }
+                if (comments.length > 0) {
+                    currentID = comments[comments.length - 1].ID + 1;
+                    document.body.scrollTop = 99999;
+                }
+            }
+        }
+        xhr.send();
+    }, 1000);
+</script>
+</body>
+</html>
