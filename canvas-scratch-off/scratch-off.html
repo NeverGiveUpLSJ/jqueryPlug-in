@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css" media="screen">
+	*{margin:0;padding:0;}
+		#ca{
+			margin: 100px;
+			border: 1px solid white;
+			background: url("bg_c.png")
+		}
+		body{
+			background: #bc1339;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="ca" width="200px" height="200px">
+
+	</canvas>
+
+
+</body>
+<script>
+
+
+
+	var oC=document.getElementById("ca");
+	var ctx=oC.getContext("2d");
+
+//绘制与画布等宽高的矩形
+	ctx.fillStyle="lightgray";
+	ctx.fillRect(0,0,200,200);
+//核心属性 再源图像之外显示
+	ctx.globalCompositeOperation="destination-out";
+	// ctx.fillRect(50,50,100,100);
+//绘制路径
+	ctx.lineWidth=20;
+	ctx.lineCap="round";
+	oC.onmousedown=(ev)=>{
+		var ev=ev||window.event;
+		ctx.beginPath();
+		ctx.moveTo(ev.clientX-100,ev.clientY-100);
+		oC.onmousemove=(ev)=>{
+			var ev=ev||window.event;
+			ctx.lineTo(ev.clientX-100,ev.clientY-100);
+			ctx.stroke();
+		}
+		oC.onmouseup=(ev)=>{
+			oC.onmousemove=null;
+		}
+	}
+</script>
+</html>
