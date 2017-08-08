@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/">
+	<style>
+		.buttons * {
+  			padding: 0;
+		}
+
+		body {
+		  font: 100% Helvetica, sans-serif;
+		  color: #333;
+		  padding: 0;
+		  margin: 0;
+		  background: #F7F7F7;
+		  text-align: center;
+		}
+
+		h1,
+		p.sub-title {
+		  text-transform: uppercase;
+		  letter-spacing: 0.2em;
+		}
+
+		h1,
+		.buttons {
+		  margin-top: 50px;
+		}
+
+		.buttons ol {
+		  padding: 0;
+		  margin-left: 2.5vw;
+		  list-style: none;
+		  display: -webkit-box;
+		  display: -moz-box;
+		  display: -ms-flexbox;
+		  display: -webkit-flex;
+		  display: flex;
+		  -webkit-box-orient: horizontal;
+		  -webkit-box-direction: normal;
+		  -webkit-flex-flow: row wrap;
+		  -ms-flex-flow: row wrap;
+		  flex-flow: row wrap;
+		  -webkit-justify-content: flex-start;
+		  justify-content: flex-start;
+		}
+		.buttons ol li {
+		  position: relative;
+		  width: 23vw;
+		  height: 23vw;
+		  cursor: pointer;
+		  margin: 0 1vw 3vw 0;
+		  background: #FFF;
+		  transition: background 0.35s;
+		  counter-increment: list-counter;
+		  display: -webkit-box;
+		  display: -moz-box;
+		  display: -ms-flexbox;
+		  display: -webkit-flex;
+		  display: flex;
+		  -webkit-box-orient: vertical;
+		  -webkit-box-direction: normal;
+		  -webkit-flex-flow: column wrap;
+		  -ms-flex-flow: column wrap;
+		  flex-flow: column wrap;
+		  -webkit-justify-content: center;
+		  justify-content: center;
+		}
+		.buttons ol li:nth-child(20n + 1):hover {
+		  background: #e83030;
+		  color: #FFF;
+		}
+		.buttons ol li:nth-child(20n + 2):hover {
+		  background: #e86830;
+		  color: #FFF;
+		}
+		.buttons ol li:nth-child(20n + 3):hover {
+		  background: #e89f30;
+		  color: #FFF;
+		}
+		.buttons ol li:nth-child(20n + 4):hover {
+		  background: #e8d630;
+		  color: #222;
+		}
+		.buttons ol li:nth-child(20n + 5):hover {
+		  background: #c3e830;
+		  color: #222;
+		}
+		.buttons ol li:nth-child(20n + 6):hover {
+		  background: #8ce830;
+		  color: #222;
+		}
+		.buttons ol li:nth-child(20n + 7):hover {
+		  background: #55e830;
+		  color: #222;
+		}
+		.buttons ol li:nth-child(20n + 8):hover {
+		  background: #30e843;
+		  color: #222;
+		}
+		.buttons ol li:nth-child(20n + 9):hover {
+		  background: #30e87a;
+		  color: #222;
+		}
+		.buttons ol li:nth-child(20n + 10):hover {
+		  background: #30e8b1;
+		  color: #222;
+		}
+		.buttons ol li:nth-child(20n + 11):hover {
+		  background: #30e8e8;
+		  color: #222;
+		}
+		.buttons ol li:nth-child(20n + 12):hover {
+		  background: #30b1e8;
+		  color: #FFF;
+		}
+		.buttons ol li:nth-child(20n + 13):hover {
+		  background: #307ae8;
+		  color: #FFF;
+		}
+		.buttons ol li:nth-child(20n + 14):hover {
+		  background: #3043e8;
+		  color: #FFF;
+		}
+		.buttons ol li:nth-child(20n + 15):hover {
+		  background: #5530e8;
+		  color: #FFF;
+		}
+		.buttons ol li:nth-child(20n + 16):hover {
+		  background: #8c30e8;
+		  color: #FFF;
+		}
+		.buttons ol li:nth-child(20n + 17):hover {
+		  background: #c330e8;
+		  color: #FFF;
+		}
+		.buttons ol li:nth-child(20n + 18):hover {
+		  background: #e830d6;
+		  color: #FFF;
+		}
+		.buttons ol li:nth-child(20n + 19):hover {
+		  background: #e8309f;
+		  color: #FFF;
+		}
+		.buttons ol li:nth-child(20n + 20):hover {
+		  background: #e83068;
+		  color: #FFF;
+		}
+		.buttons ol li:nth-child(4n) {
+		  margin-right: 0;
+		}
+		@media screen and (max-width: 768px) {
+		  .buttons ol li {
+		    width: 46vw;
+		    height: 46vw;
+		    margin: 0 4vw 4vw 0;
+		  }
+		  .buttons ol li:nth-child(2n) {
+		    margin-right: 0;
+		  }
+		}
+		.buttons ol li:before {
+		  position: absolute;
+		  bottom: 0;
+		  left: 0;
+		  z-index: -1;
+		  display: block;
+		  width: 23vw;
+		  height: 20vw;
+		  content: "";
+		  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+		}
+		.buttons ol li:after {
+		  position: absolute;
+		  top: 38%;
+		  right: 7vw;
+		  transform: rotate(-90deg);
+		  z-index: 1;
+		  display: block;
+		  width: 30px;
+		  height: 30px;
+		  text-align: center;
+		  content: counter(list-counter,decimal-leading-zero);
+		  font-family: Helvetica;
+		  font-size: 20px;
+		  line-height: 30px;
+		  font-weight: 300;
+		  opacity: 0.15;
+		  transition: color 0.35s;
+		  will-change: color;
+		}
+		.buttons ol li button {
+		  position: relative;
+		  display: block;
+		  width: 50px;
+		  height: 1px;
+		  margin: 0 auto;
+		  border: none;
+		  cursor: pointer;
+		  background: currentColor;
+		  color: inherit;
+		  font-size: 0;
+		  transition: 0.35s;
+		}
+		.buttons ol li button:before, .buttons ol li button:after {
+		  position: absolute;
+		  top: 0;
+		  left: 50%;
+		  display: block;
+		  width: 100%;
+		  height: 1px;
+		  background: currentColor;
+		  content: "";
+		  transition: transform 0.35s;
+		}
+		.buttons ol li button:before {
+		  transform: translate(-50%, -14px);
+		}
+		.buttons ol li button:after {
+		  transform: translate(-50%, 14px);
+		}
+		.buttons ol li:nth-child(1) button:before, .buttons ol li:nth-child(1) button:after {
+		  transform-origin: 0% 0%;
+		}
+		.buttons ol li:nth-child(1):hover button:before {
+		  transform: translate(-50%, 0) rotate(-35deg) scaleX(0.6);
+		}
+		.buttons ol li:nth-child(1):hover button:after {
+		  transform: translate(-50%, 0) rotate(35deg) scaleX(0.6);
+		}
+		.buttons ol li:nth-child(2) button:before, .buttons ol li:nth-child(2) button:after {
+		  transform-origin: 50% 0%;
+		}
+		.buttons ol li:nth-child(2):hover button {
+		  background: transparent;
+		}
+		.buttons ol li:nth-child(2):hover button:before {
+		  transform: translate(-50%, 0) rotate(45deg);
+		}
+		.buttons ol li:nth-child(2):hover button:after {
+		  transform: translate(-50%, 0) rotate(-45deg);
+		}
+		.buttons ol li:nth-child(3) button:before, .buttons ol li:nth-child(3) button:after {
+		  transform-origin: 100% 0%;
+		}
+		.buttons ol li:nth-child(3):hover button:before {
+		  transform: translate(-50%, 0) rotate(35deg) scaleX(0.6);
+		}
+		.buttons ol li:nth-child(3):hover button:after {
+		  transform: translate(-50%, 0) rotate(-35deg) scaleX(0.6);
+		}
+		.buttons ol li:nth-child(4) button:before, .buttons ol li:nth-child(4) button:after {
+		  transform-origin: 0% 0%;
+		}
+		.buttons ol li:nth-child(4):hover button {
+		  transform: rotate(-90deg);
+		}
+		.buttons ol li:nth-child(4):hover button:before {
+		  transform: translate(-50%, 0) rotate(-45deg) scaleX(0.8);
+		}
+		.buttons ol li:nth-child(4):hover button:after {
+		  transform: translate(-50%, 0) rotate(45deg) scaleX(0.8);
+		}
+		.buttons ol li:nth-child(5) button:before, .buttons ol li:nth-child(5) button:after {
+		  transform-origin: 0% 0%;
+		}
+		.buttons ol li:nth-child(5):hover button {
+		  transform: rotate(90deg);
+		}
+		.buttons ol li:nth-child(5):hover button:before {
+		  transform: translate(-50%, 0) rotate(-45deg) scaleX(0.8);
+		}
+		.buttons ol li:nth-child(5):hover button:after {
+		  transform: translate(-50%, 0) rotate(45deg) scaleX(0.8);
+		}
+		.buttons ol li:nth-child(6) button:before, .buttons ol li:nth-child(6) button:after {
+		  transform-origin: 0% 0%;
+		}
+		.buttons ol li:nth-child(6):hover button {
+		  background: transparent;
+		}
+		.buttons ol li:nth-child(6):hover button:before {
+		  transform: translate(-50%, 0) rotate(-45deg) scaleX(0.7);
+		}
+		.buttons ol li:nth-child(6):hover button:after {
+		  transform: translate(-50%, 0) rotate(45deg) scaleX(0.7);
+		}
+		.buttons ol li:nth-child(7) button:before, .buttons ol li:nth-child(7) button:after {
+		  transform-origin: 100% 0%;
+		}
+		.buttons ol li:nth-child(7):hover button {
+		  background: transparent;
+		}
+		.buttons ol li:nth-child(7):hover button:before {
+		  transform: translate(-50%, 0) rotate(45deg) scaleX(0.7);
+		}
+		.buttons ol li:nth-child(7):hover button:after {
+		  transform: translate(-50%, 0) rotate(-45deg) scaleX(0.7);
+		}
+		.buttons ol li:nth-child(8) button:before, .buttons ol li:nth-child(8) button:after {
+		  transform-origin: 100% 0%;
+		}
+		.buttons ol li:nth-child(8):hover button {
+		  transform: rotate(90deg);
+		  background: transparent;
+		}
+		.buttons ol li:nth-child(8):hover button:before {
+		  transform: translate(-50%, 0) rotate(45deg) scaleX(0.7);
+		}
+		.buttons ol li:nth-child(8):hover button:after {
+		  transform: translate(-50%, 0) rotate(-45deg) scaleX(0.7);
+		}
+		.buttons ol li:nth-child(9) button {
+		  transition: 0s;
+		}
+		.buttons ol li:nth-child(9) button:before, .buttons ol li:nth-child(9) button:after {
+		  transform-origin: 50% 0%;
+		}
+		.buttons ol li:nth-child(9):hover button {
+		  background: transparent;
+		}
+		.buttons ol li:nth-child(9):hover button:before {
+		  animation: menuBefore 0.5s forwards;
+		}
+		.buttons ol li:nth-child(9):hover button:after {
+		  animation: menuAfter 0.5s forwards;
+		}
+		@keyframes menuBefore {
+		  0% {
+		    transform: translate(-50%, -14px);
+		  }
+		  40% {
+		    transform: translate(-50%, 0);
+		  }
+		  60% {
+		    transform: translate(-50%, 0);
+		  }
+		  100% {
+		    transform: translate(-50%, 0) rotate(45deg);
+		  }
+		}
+		@keyframes menuAfter {
+		  0% {
+		    transform: translate(-50%, 14px);
+		  }
+		  40% {
+		    transform: translate(-50%, 0);
+		  }
+		  60% {
+		    transform: translate(-50%, 0);
+		  }
+		  100% {
+		    transform: translate(-50%, 0) rotate(-45deg);
+		  }
+		}
+		.buttons ol li:nth-child(10) button {
+		  transition: transform 0.35s 0s;
+		}
+		.buttons ol li:nth-child(10) button:before, .buttons ol li:nth-child(10) button:after {
+		  transform-origin: 0% 0%;
+		  transition: transform 0.35s 0.35s;
+		}
+		.buttons ol li:nth-child(10):hover button {
+		  transform: rotate(-90deg);
+		  transition: transform 0.35s 0.35s, background 0.35s 0s;
+		}
+		.buttons ol li:nth-child(10):hover button:before {
+		  transform: translate(-50%, 0) rotate(-45deg) scaleX(0.8);
+		  transition: transform 0.35s 0s;
+		}
+		.buttons ol li:nth-child(10):hover button:after {
+		  transform: translate(-50%, 0) rotate(45deg) scaleX(0.8);
+		  transition: transform 0.35s 0s;
+		}
+		.buttons ol li:nth-child(11) button {
+		  transition: 0.1s;
+		}
+		.buttons ol li:nth-child(11) button:before, .buttons ol li:nth-child(11) button:after {
+		  transform-origin: 100% 0%;
+		}
+		.buttons ol li:nth-child(11) button:after {
+		  transition-delay: 0.15s;
+		}
+		.buttons ol li:nth-child(11):hover button {
+		  transform: translateX(8px);
+		  transition: transform 0.15s 0.5s;
+		}
+		.buttons ol li:nth-child(11):hover button:before {
+		  transform: translate(-50%, 0) rotate(35deg) scaleX(0.6);
+		}
+		.buttons ol li:nth-child(11):hover button:after {
+		  transform: translate(-50%, 0) rotate(-35deg) scaleX(0.6);
+		}
+		.buttons ol li:nth-child(12) button {
+		  transition: transform 0.35s 0.35s;
+		}
+		.buttons ol li:nth-child(12) button:before, .buttons ol li:nth-child(12) button:after {
+		  transform-origin: 0% 0%;
+		  transition: transform 0.35s 0s;
+		}
+		.buttons ol li:nth-child(12):hover button {
+		  transform: rotate(-90deg);
+		  transition: transform 0.35s 0s;
+		}
+		.buttons ol li:nth-child(12):hover button:before {
+		  transform: translate(-50%, 0) rotate(-45deg) scaleX(0.8);
+		  transition: transform 0.35s 0.35s;
+		}
+		.buttons ol li:nth-child(12):hover button:after {
+		  transform: translate(-50%, 0) rotate(45deg) scaleX(0.8);
+		  transition: transform 0.35s 0.35s;
+		}
+		.buttons ol li:nth-child(n+13) button {
+		  height: 30px;
+		  background: transparent;
+		  border-top: 1px solid;
+		  border-bottom: 1px solid;
+		}
+		.buttons ol li:nth-child(n+13) button:before, .buttons ol li:nth-child(n+13) button:after {
+		  top: 50%;
+		  transform: translate(-50%, -50%);
+		}
+		.buttons ol li:nth-child(13):hover button {
+		  border-color: transparent;
+		}
+		.buttons ol li:nth-child(13):hover button:before {
+		  transform: translate(-50%, -50%) rotate(45deg);
+		}
+		.buttons ol li:nth-child(13):hover button:after {
+		  transform: translate(-50%, -50%) rotate(-45deg);
+		}
+		.buttons ol li:nth-child(14):hover button {
+		  border-color: transparent;
+		}
+		.buttons ol li:nth-child(14):hover button:before {
+		  transform: translate(-50%, -50%) rotate(-45deg);
+		}
+		.buttons ol li:nth-child(14):hover button:after {
+		  transform: translate(-50%, -50%) rotate(-135deg);
+		}
+		.buttons ol li:nth-child(15):hover button {
+		  border-color: transparent;
+		}
+		.buttons ol li:nth-child(15):hover button:before {
+		  transform: translate(-50%, -50%) rotate(135deg);
+		}
+		.buttons ol li:nth-child(15):hover button:after {
+		  transform: translate(-50%, -50%) rotate(-135deg);
+		}
+		.buttons ol li:nth-child(16) button:before, .buttons ol li:nth-child(16) button:after {
+		  transform-origin: 100% 0%;
+		}
+		.buttons ol li:nth-child(16):hover button {
+		  border-color: transparent;
+		}
+		.buttons ol li:nth-child(16):hover button:before {
+		  transform: translate(-50%, -50%) rotate(30deg) scaleX(0.7);
+		}
+		.buttons ol li:nth-child(16):hover button:after {
+		  transform: translate(-50%, -50%) rotate(-30deg) scaleX(0.7);
+		}
+		.buttons ol li:nth-child(17) button {
+		  transition: height 0.35s 0.35s, border-color 0.35s 0.35s;
+		}
+		.buttons ol li:nth-child(17) button:before, .buttons ol li:nth-child(17) button:after {
+		  transform-origin: 50% 50%;
+		}
+		.buttons ol li:nth-child(17):hover button {
+		  height: 0;
+		  border-color: transparent;
+		  transition: all 0.35s 0s;
+		}
+		.buttons ol li:nth-child(17):hover button:before {
+		  transform: translate(-50%, -50%) rotate(45deg);
+		  transition-delay: 0.5s;
+		}
+		.buttons ol li:nth-child(17):hover button:after {
+		  transform: translate(-50%, -50%) rotate(-45deg);
+		  transition-delay: 0.5s;
+		}
+		.buttons ol li:nth-child(18) button {
+		  transition: height 0.35s 0.35s, border-color 0.35s 0.35s;
+		}
+		.buttons ol li:nth-child(18) button:before, .buttons ol li:nth-child(18) button:after {
+		  transform-origin: 50% 50%;
+		}
+		.buttons ol li:nth-child(18):hover button {
+		  height: 0;
+		  border-color: transparent;
+		  transition: all 0.35s 0s;
+		}
+		.buttons ol li:nth-child(18):hover button:before {
+		  transform: translate(-50%, -50%) rotate(-45deg);
+		  transition-delay: 0.5s;
+		}
+		.buttons ol li:nth-child(18):hover button:after {
+		  transform: translate(-50%, -50%) rotate(-135deg);
+		  transition-delay: 0.5s;
+		}
+		.buttons ol li:nth-child(19) button {
+		  transition: height 0.35s 0.35s, border-color 0.35s 0.35s, transform 0.35s 0s;
+		}
+		.buttons ol li:nth-child(19) button:before, .buttons ol li:nth-child(19) button:after {
+		  transform-origin: 50% 50%;
+		}
+		.buttons ol li:nth-child(19):hover button {
+		  height: 0;
+		  border-color: transparent;
+		  transform: rotate(135deg);
+		  transition: all 0.35s 0s, transform 0.35s 1s;
+		}
+		.buttons ol li:nth-child(19):hover button:before {
+		  transform: translate(-50%, -50%) rotate(90deg);
+		  transition-delay: 0.5s;
+		}
+		.buttons ol li:nth-child(20) button {
+		  transition: height 0.35s 0.35s, border-color 0.35s 0.35s, transform 0.35s 0s;
+		}
+		.buttons ol li:nth-child(20) button:before, .buttons ol li:nth-child(20) button:after {
+		  transform: translate(0, -50%);
+		  width: 50%;
+		  height: 0;
+		  background: transparent;
+		  border-top: 1px solid;
+		}
+		.buttons ol li:nth-child(20) button:before {
+		  left: 0;
+		  border-right: 1px solid;
+		}
+		.buttons ol li:nth-child(20) button:after {
+		  left: auto;
+		  right: 0;
+		  border-left: 1px solid;
+		}
+		.buttons ol li:nth-child(20):hover button {
+		  height: 0;
+		  border-color: transparent;
+		  transform: rotate(360deg);
+		  transition: all 0.35s 0s, transform 0.7s 0s;
+		}
+		.buttons ol li:nth-child(20):hover button:before, .buttons ol li:nth-child(20):hover button:after {
+		  height: 25px;
+		  transition: height 0.35s 0.35s, transform 0.35s 0.35s;
+		}
+		.buttons ol li:nth-child(20):hover button:before {
+		  transform: translate(-6px, -50%) rotate(45deg);
+		}
+		.buttons ol li:nth-child(20):hover button:after {
+		  transform: translate(6px, -50%) rotate(-45deg);
+		}
+		.buttons ol:after {
+		  display: block;
+		  clear: both;
+		  content: "";
+		  position: relative;
+		}
+
+	</style>
+</head>
+<body>
+	<div class='container'>
+
+	  <button>Menu</button>
+	  <div class='buttons'>
+	    <ol>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	      <li>
+	        <button class='menu-toggle'>Menu</button>
+	      </li>
+	    </ol>
+	  </div>
+	</div>
+</body>
+</html>
