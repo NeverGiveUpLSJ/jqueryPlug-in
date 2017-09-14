@@ -105,7 +105,7 @@
 				<pre class="options">
 					{
 						language:'en'
-					}				
+					}
 				</pre>
 			</div>
 			<div class="demo">
@@ -114,7 +114,7 @@
 				<pre class="options">
 					{
 						language: 'custom'
-					}			
+					}
 				</pre>
 			</div>
 			<!-- 5 -->
@@ -124,7 +124,7 @@
 				<pre class="options">
 					{
 						startDate: '2014-11-20'
-					}				
+					}
 				</pre>
 			</div>
 
@@ -135,7 +135,7 @@
 					{
 						maxDays: 7,
 						minDays: 3
-					}				
+					}
 				</pre>
 			</div>
 			<!-- 6 -->
@@ -146,7 +146,7 @@
 					{
 						startDate: '2013-01-10',
 						endDate: '2013-02-10'
-					}				
+					}
 				</pre>
 			</div>
 			<!-- 7 -->
@@ -157,7 +157,7 @@
 					{
 						minDays: 3,
 						maxDays: 7
-					}			
+					}
 				</pre>
 			</div>
 			<!-- 8 -->
@@ -167,7 +167,7 @@
 				<pre class="options">
 					{
 						startOfWeek: 'monday'
-					}			
+					}
 				</pre>
 			</div>
 			<!-- 9 -->
@@ -184,15 +184,15 @@
 						{
 							this.innerHTML = s;
 						}
-					}				
+					}
 				</pre>
 			</div>
 			<!-- 2个input -->
 			<div class="demo">
-				<strong>two-input </strong>Use two inputs: 
+				<strong>two-input </strong>Use two inputs:
 				<span id="two-inputs">
 					<input id="date-range200" size="20" value="">
-					 to 
+					 to
 					<input id="date-range201" size="20" value="">
 				</span>
 				<a href="#" class="show-option">Show Config</a>
@@ -211,7 +211,7 @@
 							$('#date-range200').val(s1);
 							$('#date-range201').val(s2);
 						}
-					}				
+					}
 				</pre>
 			</div>
 			<!-- 10 -->
@@ -221,7 +221,7 @@
 				<pre class="options">
 					{
 						format: 'dddd MMM Do, YYYY'  //more formats at http://momentjs.com/docs/#/displaying/format/
-					}				
+					}
 				</pre>
 			</div>
 			<!-- 快捷选择 -->
@@ -236,7 +236,7 @@
 							'next-days': [3,5,7],
 							'next': ['week','month','year']
 						}
-					}				
+					}
 				</pre>
 			</div>
 
@@ -253,7 +253,7 @@
 							'next-days':null,
 							'next':null
 						}
-					}				
+					}
 				</pre>
 			</div>
 
@@ -289,7 +289,7 @@
 								}
 							}
 						]
-					}				
+					}
 				</pre>
 			</div>
 
@@ -313,7 +313,7 @@
 									value: 'Year To Date'
 								}
 							]
-					}				
+					}
 				</pre>
 			</div>
 
@@ -324,7 +324,7 @@
 				<pre class="options">
 					{
 						autoClose: true
-					}				
+					}
 				</pre>
 			</div>
 			<!-- alwayOpen -->
@@ -336,7 +336,7 @@
 						inline:true,
 						container: '#date-range12-container',
 						alwaysOpen:true
-					}				
+					}
 				</pre>
 				<div id="date-range12-container" style="width:456px;"></div>
 			</div>
@@ -349,7 +349,7 @@
 						autoClose: true,
 						singleDate : true,
 						showShortcuts: false
-					}				
+					}
 				</pre>
 			</div>
 
@@ -363,7 +363,7 @@
 						singleDate : true,
 						showShortcuts: false,
 						singleMonth: true
-					}				
+					}
 				</pre>
 			</div>
 
@@ -375,7 +375,7 @@
 					{
 						batchMode: 'week',
 						showShortcuts: false
-					}				
+					}
 				</pre>
 			</div>
 			<!-- 移动显示天数 -->
@@ -386,7 +386,7 @@
 					{
 						batchMode: 'week-range',
 						showShortcuts: false
-					}				
+					}
 				</pre>
     		</div>
 
@@ -404,7 +404,7 @@
 							var _tooltip = valid ? '' : 'weekends are disabled';
 							return [valid,_class,_tooltip];
 						}
-					}				
+					}
 				</pre>
 			</div>
 
@@ -471,7 +471,7 @@
 						evt.stopPropagation();
 						$('#date-range16').data('dateRangePicker').resetMonthsView();
 					});
-									
+
 				</pre>
 			</div>
 
@@ -483,7 +483,7 @@
 						stickyMonths: true,
 						startDate: '2013-01-10',
 						endDate: '2013-05-10'
-					}				
+					}
 				</pre>
 			</div>
 
@@ -640,7 +640,7 @@
 							var _tooltip = valid ? '' : 'sold out';
 							return [valid,_class,_tooltip];
 						}
-					}				
+					}
 				</pre>
 			</div>
 
@@ -671,12 +671,12 @@
 				Custom arrow symbol: <input id="date-range51" size="30" value="">
 				<a href="#" class="show-option">Show Config</a>
 				<pre class="options">
-					// To make this demo work completely, the FontAwesome stylesheets are required 				
-					{		
+					// To make this demo work completely, the FontAwesome stylesheets are required
+					{
 					    customArrowPrevSymbol: '&lt;i class="fa fa-arrow-circle-left"&gt;&lt;/i&gt;',
 					    customArrowNextSymbol: '&lt;i class="fa fa-arrow-circle-right"&gt;&lt;/i&gt;'
 					}
-									
+
 				</pre>
 			</div>
 
@@ -950,7 +950,9 @@ This date range picker plugin is under MIT LICENSE
 	</pre>
 
 
-
+	<div class="test">
+		这是我修改的测试东西
+	</div>
 	<script>
 	$(function()
 	{
